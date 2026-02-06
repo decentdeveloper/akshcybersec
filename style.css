@@ -258,6 +258,19 @@ section {
   transition: 0.15s ease-out;
 }
 
+/* Touch feedback animation */
+.cursor.touch-active,
+.cursor-follower.touch-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.cursor,
+.cursor-follower {
+  opacity: 0;
+}
+
+
 /* TOGGLE */
 .theme-toggle {
   position: fixed;
@@ -384,13 +397,7 @@ section {
   }
 }
 
-/* Disable custom cursor on touch devices */
-@media (hover: none) {
-  .cursor,
-  .cursor-follower {
-    display: none;
-  }
-}
+
 
 /* RESUME SECTION */
 .resume-section {
@@ -432,3 +439,4 @@ section {
   transform: translateY(-6px) scale(1.05);
   box-shadow: 0 0 25px #00f5d4;
 }
+
