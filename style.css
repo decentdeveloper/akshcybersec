@@ -182,7 +182,7 @@ section {
   box-shadow: 0 0 25px #00f5d4;
 }
 
-/* Hover overlay hint */
+/* Hover overlay hint
 .cert-card::after {
   content: "Click to view";
   position: absolute;
@@ -200,7 +200,7 @@ section {
 
 .cert-card:hover::after {
   opacity: 1;
-}
+} */
 
 /* MODAL */
 .modal {
@@ -377,6 +377,66 @@ section {
   }
 }
 
+/* ================================
+   CERTIFICATE VIEW / VERIFY OVERLAY
+================================ */
+
+.cert-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay */
+.cert-actions {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Buttons */
+.cert-actions a {
+  padding: 10px 26px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.view-btn {
+  background: linear-gradient(135deg, #9b5de5, #00f5d4);
+  color: #000;
+}
+
+.verify-btn {
+  border: 2px solid #00f5d4;
+  color: #00f5d4;
+  background: transparent;
+}
+
+/* Desktop hover */
+.cert-card:hover .cert-actions {
+  opacity: 1;
+}
+
+/* Mobile tap */
+.cert-card.active .cert-actions {
+  opacity: 1;
+}
+
+/* Button hover */
+.cert-actions a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f5d4;
+}
+
+
 /* Very small devices (phones < 480px) */
 @media (max-width: 480px) {
 
@@ -440,3 +500,92 @@ section {
   box-shadow: 0 0 25px #00f5d4;
 }
 
+/* CERT GRID */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.cert-card {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* VIEW / VERIFY OVERLAY */
+.cert-actions {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.cert-card:hover .cert-actions,
+.cert-card.active .cert-actions {
+  opacity: 1;
+}
+
+.view-btn, .verify-btn {
+  padding: 10px 26px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-btn {
+  background: linear-gradient(135deg,#00f5d4,#9b5de5);
+  color: #000;
+}
+
+.verify-btn {
+  border: 2px solid #00f5d4;
+  color: #00f5d4;
+}
+
+/* BADGES */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.badge-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.badge-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+}
+
+.badge-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00f5d4;
+}
