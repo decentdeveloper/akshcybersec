@@ -100,3 +100,14 @@ document.querySelectorAll('.cert-card').forEach(card => {
     card.classList.toggle('active');
   });
 });
+
+// Disable custom cursor on touch devices
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  document.querySelector('.cursor').style.display = 'none';
+  document.querySelector('.cursor-follower').style.display = 'none';
+}
+
+
+document.getElementById("exploreBtn").addEventListener("click", () => {
+  document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+});
