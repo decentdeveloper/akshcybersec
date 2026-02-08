@@ -1,15 +1,11 @@
 :root {
-  /* Brand colors */
-  --primary: #00f5d4;   /* your current teal */
-  --secondary: #9b5de5; /* your current violet */
+  --primary: #22d3ee;   /* cyan */
+  --secondary: #84cc16; /* lime */
 
-  /* Backgrounds */
-  --bg-dark: #0b0b1e;
-  --bg-light: #f5f7ff;
-
-  /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-} /*CSS color tokens*/
+  --bg-dark: #020617;
+  --bg-light: #f0fdf4;
+  --glass-bg: rgba(255,255,255,0.07);
+}
 
 * {
   margin: 0;
@@ -869,3 +865,4 @@ button:active,
     pointer-events: auto;
   }
 }
+
