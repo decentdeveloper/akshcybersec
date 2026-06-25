@@ -1233,3 +1233,178 @@ body::after {
 .footer-logo { color: #00ff41; text-shadow: 0 0 10px rgba(0,255,65,0.5); }
 footer p .mono { color: #00ff41; }
 
+
+/* ============================================================
+   CEH FEATURED BLOCK
+============================================================ */
+.ceh-featured {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  background: linear-gradient(135deg, rgba(0,255,65,0.05), rgba(0,200,50,0.02));
+  border: 1px solid rgba(0,255,65,0.25);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ceh-featured::before {
+  content: 'CEH';
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  font-family: var(--font-display);
+  font-size: 9rem;
+  font-weight: 800;
+  color: rgba(0,255,65,0.03);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+}
+
+/* LEFT COL: badge + meta */
+.ceh-badge-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ceh-badge-ring {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,255,65,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 0 30px rgba(0,255,65,0.15), 0 0 60px rgba(0,255,65,0.06);
+  transition: box-shadow 0.3s;
+  background: rgba(0,255,65,0.03);
+}
+
+.ceh-badge-ring:hover {
+  box-shadow: 0 0 50px rgba(0,255,65,0.4), 0 0 100px rgba(0,255,65,0.15);
+}
+
+.ceh-badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.ceh-badge-verify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.ceh-issued, .ceh-cert-num {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.ceh-cert-num {
+  color: var(--c1);
+  text-shadow: 0 0 6px rgba(0,255,65,0.4);
+  font-size: 0.68rem;
+}
+
+.ceh-verify-btn {
+  margin-top: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+/* RIGHT COL: logo + cert preview + actions */
+.ceh-cert-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ceh-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ceh-cea-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1) drop-shadow(0 0 6px rgba(0,255,65,0.3));
+}
+
+.ceh-title-block { display: flex; flex-direction: column; gap: 4px; }
+
+.ceh-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ceh-org {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Certificate preview */
+.ceh-cert-preview-wrap {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,65,0.2);
+  cursor: pointer;
+  flex: 1;
+}
+
+.ceh-cert-preview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s var(--ease), filter 0.4s;
+  filter: brightness(0.9);
+}
+
+.ceh-cert-preview-wrap:hover .ceh-cert-preview {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+.ceh-cert-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,255,65,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Action buttons row */
+.ceh-action-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .ceh-featured {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+  }
+  .ceh-badge-ring { width: 120px; height: 120px; }
+  .ceh-title { font-size: 1.25rem; }
+  .ceh-cert-preview { max-height: 160px; }
+}
